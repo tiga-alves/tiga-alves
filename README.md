@@ -14,6 +14,6 @@
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=tiga-alves&show_icons=true&locale=en&layout=compact" alt="tiga-alves" /></p>
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=tiga-alves&show_icons=true&locale=en" alt="tiga-alves" /></p>
+<!--  <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=tiga-alves&show_icons=true&locale=en" alt="tiga-alves" /></p> -->
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=tiga-alves&" alt="tiga-alves" /></p>
