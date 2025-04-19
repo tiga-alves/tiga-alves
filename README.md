@@ -1,6 +1,8 @@
 <h1 align="center">Hi 👋, I'm Thiago</h1>
 <h3 align="center">A passionate data scientist from Brazil</h3>
 
+<p>I’m definitely not the most intelligent or smartest person, but I can confidently say I’m very curious, hardworking, and a bit of a workholic when it comes to this field.</p>
+
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=tiga-alves&label=Profile%20views&color=0e75b6&style=flat" alt="tiga-alves" /> </p>
 
 - 📫 How to reach me **tiga_alves@hotmail.com**
