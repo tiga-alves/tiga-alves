@@ -1,11 +1,7 @@
 <h1 align="center">Hi 👋, I'm Thiago</h1>
-<h3 align="center">A passionate data scientist from Brazil</h3>
+<h3 align="center">Data Scientist</h3>
 
-<p>I’m definitely not the most intelligent or smartest person, but I can confidently say I’m very curious, hardworking, and a bit of a workholic when it comes to this field.</p>
-
-
-
-## 🌐 Socials:
+## 🌐 **SOCIALS**:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thiago-damascena-792740165/) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:tiga_alves@hotmail.com) 
 
 # 💻 Tech Stack:
