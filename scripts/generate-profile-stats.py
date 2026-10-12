@@ -32,6 +32,9 @@ async def owner_query(self, query):
         raise RuntimeError('GitHub returned incomplete statistics: ' + json.dumps(result.get('errors', [])))
     if 'viewer' in result['data'] and result['data']['viewer'] is None:
         raise RuntimeError('GitHub profile owner could not be loaded.')
+    viewer = result['data'].get('viewer', {})
+    for repo in viewer.get('repositories', {}).get('nodes', []):
+        repo['stargazers'] = {'totalCount': repo.get('stargazerCount', 0)}
     return result
 
 def public_repositories(contrib_cursor=None, owned_cursor=None):
@@ -44,7 +47,7 @@ def public_repositories(contrib_cursor=None, owned_cursor=None):
             pageInfo { hasNextPage endCursor }
             nodes {
                 nameWithOwner forkCount isFork isEmpty isArchived isPrivate
-                stargazers { totalCount }
+                stargazerCount
                 languages(first: 20, orderBy: {field: SIZE, direction: DESC}) {
                     edges { size node { name color } }
                 }
