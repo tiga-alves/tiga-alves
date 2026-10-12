@@ -4,7 +4,7 @@
 
 - Focused on Data Science, AI, and predictive modeling with Python and SQL.
 - Building Machine Learning projects and turning data into business insights.
-- Pursuing an MBA in Data Science and Artificial Intelligence at FIAP.
+- MBA in Data Science and Artificial Intelligence from FIAP.
 - B.Sc. in Computer Science from Universidade Cruzeiro do Sul.
 - Technical diploma in Information Technology from ETEC.
 
