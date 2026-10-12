@@ -1,4 +1,4 @@
-## Thiago Alves Damascena
+# Thiago Alves Damascena
 
 ## About Me
 
