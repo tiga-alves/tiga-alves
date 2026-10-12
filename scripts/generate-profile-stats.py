@@ -13,6 +13,7 @@ sys.path.insert(0, str(source))
 os.chdir(source)
 
 from src.core.github_client import GitHubClient
+from src.core.graphql_queries import GraphQLQueries
 from src.generators.base import GeneratorRegistry
 from src.generators.overview import OverviewGenerator
 from src.generators.languages import LanguagesGenerator
@@ -28,11 +29,31 @@ async def owner_query(self, query):
                    'viewer: user(login: ' + json.dumps(self.username) + ') {', query)
     result = await original_query(self, query)
     if result.get('errors') or not result.get('data'):
-        raise RuntimeError('GitHub returned incomplete statistics; retaining existing cards.')
+        raise RuntimeError('GitHub returned incomplete statistics: ' + json.dumps(result.get('errors', [])))
     if 'viewer' in result['data'] and result['data']['viewer'] is None:
         raise RuntimeError('GitHub profile owner could not be loaded.')
     return result
 
+def public_repositories(contrib_cursor=None, owned_cursor=None):
+    cursor = json.dumps(owned_cursor)
+    return """
+    { viewer {
+        login name followers { totalCount } following { totalCount }
+        repositories(first: 25, privacy: PUBLIC, ownerAffiliations: OWNER,
+                     after: CURSOR) {
+            pageInfo { hasNextPage endCursor }
+            nodes {
+                nameWithOwner forkCount isFork isEmpty isArchived isPrivate
+                stargazers { totalCount }
+                languages(first: 20, orderBy: {field: SIZE, direction: DESC}) {
+                    edges { size node { name color } }
+                }
+            }
+        }
+    } }
+    """.replace('CURSOR', cursor)
+
+GraphQLQueries.repos_overview = staticmethod(public_repositories)
 GitHubClient.query = owner_query
 GeneratorRegistry._generators = [OverviewGenerator, LanguagesGenerator, StreakGenerator]
 config_path = source / 'config.yml'
