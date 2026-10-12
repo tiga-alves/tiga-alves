@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Thiago</h1>
+## Thiago Alves Damascena
 
 ## About Me
 
