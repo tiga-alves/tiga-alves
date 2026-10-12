@@ -1,0 +1,90 @@
+name: Update Profile Statistics
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/update-profile-stats.yml
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-statistics
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout profile repository
+        uses: actions/checkout@v4
+
+      - name: Generate light statistics cards
+        uses: leonardokr/leo-git-statistics@v2
+        with:
+          github-token: ${{ secrets.PROFILE_STATS_TOKEN || github.token }}
+          github-username: tiga-alves
+          output-dir: profile
+          config-overrides: |
+            github_user: tiga-alves
+            timezone: America/Sao_Paulo
+            themes:
+              enabled: [light]
+            stats_generation:
+              exclude_private_repos: "true"
+              exclude_contrib_repos: "true"
+              store_repo_views: "false"
+              store_repo_clones: "false"
+              show_views: "false"
+              show_clones: "false"
+
+      - name: Validate profile cards
+        shell: bash
+        run: |
+          set -euo pipefail
+          for card in overview languages streak; do
+            test -s "profile/${card}light.svg"
+          done
+
+      - name: Upload generated cards
+        uses: actions/upload-artifact@v4
+        with:
+          name: light-profile-statistics
+          path: |
+            profile/overviewlight.svg
+            profile/languageslight.svg
+            profile/streaklight.svg
+          if-no-files-found: error
+
+  publish:
+    needs: generate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout profile repository
+        uses: actions/checkout@v4
+
+      - name: Download generated cards
+        uses: actions/download-artifact@v4
+        with:
+          name: light-profile-statistics
+          path: profile
+
+      - name: Commit profile cards
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/overviewlight.svg profile/languageslight.svg profile/streaklight.svg
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update light profile statistics"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
