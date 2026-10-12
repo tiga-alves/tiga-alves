@@ -1,4 +1,5 @@
 # Thiago Alves Damascena
+Data Scientist | Machine Learning | AI | Data Analytics
 
 ## About Me
 
