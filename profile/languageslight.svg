@@ -47,7 +47,7 @@
   <g class="animate-fade delay-2">
     <rect x="0" y="0" width="455" height="8" rx="4" ry="4" fill="#d0d7de" opacity="0.3"/>
     <g clip-path="url(#progress-clip)" class="progress-animate">
-      <rect x="0.00" y="0" width="265.50" height="8" fill="#DA5B0B"/><rect x="265.50" y="0" width="80.33" height="8" fill="#3572A5"/><rect x="345.83" y="0" width="79.23" height="8" fill="#f1e05a"/><rect x="425.06" y="0" width="16.24" height="8" fill="#663399"/><rect x="441.31" y="0" width="13.65" height="8" fill="#e34c26"/><rect x="454.95" y="0" width="0.05" height="8" fill="#C1F12E"/>
+      <rect x="0.00" y="0" width="262.30" height="8" fill="#DA5B0B"/><rect x="262.30" y="0" width="83.22" height="8" fill="#f1e05a"/><rect x="345.52" y="0" width="79.36" height="8" fill="#3572A5"/><rect x="424.89" y="0" width="15.95" height="8" fill="#663399"/><rect x="440.84" y="0" width="14.12" height="8" fill="#e34c26"/><rect x="454.95" y="0" width="0.05" height="8" fill="#C1F12E"/>
     </g>
   </g>
 </g>
@@ -58,23 +58,23 @@
       <li style="display: flex; align-items: center;">
                 <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #DA5B0B; margin-right: 6px;"></span>
                 <span style="color: #24292f;">Jupyter Notebook</span>
-                <span style="color: #57606a; margin-left: 4px; font-size: 11px;">58.4%</span>
-            </li><li style="display: flex; align-items: center;">
-                <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #3572A5; margin-right: 6px;"></span>
-                <span style="color: #24292f;">Python</span>
-                <span style="color: #57606a; margin-left: 4px; font-size: 11px;">17.7%</span>
+                <span style="color: #57606a; margin-left: 4px; font-size: 11px;">57.6%</span>
             </li><li style="display: flex; align-items: center;">
                 <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #f1e05a; margin-right: 6px;"></span>
                 <span style="color: #24292f;">JavaScript</span>
+                <span style="color: #57606a; margin-left: 4px; font-size: 11px;">18.3%</span>
+            </li><li style="display: flex; align-items: center;">
+                <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #3572A5; margin-right: 6px;"></span>
+                <span style="color: #24292f;">Python</span>
                 <span style="color: #57606a; margin-left: 4px; font-size: 11px;">17.4%</span>
             </li><li style="display: flex; align-items: center;">
                 <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #663399; margin-right: 6px;"></span>
                 <span style="color: #24292f;">CSS</span>
-                <span style="color: #57606a; margin-left: 4px; font-size: 11px;">3.6%</span>
+                <span style="color: #57606a; margin-left: 4px; font-size: 11px;">3.5%</span>
             </li><li style="display: flex; align-items: center;">
                 <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #e34c26; margin-right: 6px;"></span>
                 <span style="color: #24292f;">HTML</span>
-                <span style="color: #57606a; margin-left: 4px; font-size: 11px;">3.0%</span>
+                <span style="color: #57606a; margin-left: 4px; font-size: 11px;">3.1%</span>
             </li><li style="display: flex; align-items: center;">
                 <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #C1F12E; margin-right: 6px;"></span>
                 <span style="color: #24292f;">Batchfile</span>
